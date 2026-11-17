@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UW Food Pantry Recipes</title>
+  <meta
+    name="description"
+    content="Find recipes based on the foods you got from the University of Washington Food Pantry."
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <span class="brand-mark">W</span>
+        <div class="brand-text">
+          <span class="brand-title">UW Food Pantry</span>
+          <span class="brand-subtitle">Recipe Finder</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <h1>What did you get from the pantry?</h1>
+        <p class="hero-sub">
+          Type in the ingredients you picked up and we'll show you recipes you can make.
+          Separate ingredients with commas, like <em>beans, rice, eggs</em>.
+        </p>
+
+        <div class="search-wrap">
+          <input
+            type="search"
+            id="search-input"
+            class="search-input"
+            placeholder="Search ingredients, e.g. beans, rice, eggs…"
+            autocomplete="off"
+            aria-label="Search recipes by ingredient"
+          />
+          <button type="button" id="clear-btn" class="clear-btn" aria-label="Clear search" hidden>
+            &times;
+          </button>
+        </div>
+
+        <div class="suggestions" aria-hidden="true">
+          <span class="suggestions-label">Try:</span>
+          <button type="button" class="chip" data-term="beans">beans</button>
+          <button type="button" class="chip" data-term="rice">rice</button>
+          <button type="button" class="chip" data-term="eggs">eggs</button>
+          <button type="button" class="chip" data-term="green beans">green beans</button>
+          <button type="button" class="chip" data-term="tomatoes">tomatoes</button>
+          <button type="button" class="chip" data-term="yogurt">yogurt</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="results-section">
+      <p id="result-count" class="result-count" aria-live="polite"></p>
+      <div id="recipe-list" class="recipe-grid"></div>
+      <p id="empty-state" class="empty-state" hidden>
+        No recipes match those ingredients. Try a different or more general term, like
+        <strong>beans</strong> or <strong>cheese</strong>.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>
+      Recipes from "Recipe Cards" by Chris Jaehne. Built for the University of Washington Food Pantry.
+    </p>
+  </footer>
+
+  <script src="recipes.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
